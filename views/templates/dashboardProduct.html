@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<!-- This file will design this page -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/dashboardProduct.css') }}">
+
+<!-- This file will make this page responsive -->
+<link rel="stylesheet" href="{{ url_for('static', filename='responsive/dashboardProduct.css') }}">
+
+<h1 class="page-title">
+    Your Products
+</h1>
+
+<div class="add-product-btn-div">
+<a href="/dashboard/addDashboardProduct" class="add-product-btn">Add Dashboard Product</a>
+</div>
+
+<div class="products-div-parent">
+
+    <div class="product-div">
+        <img src="{{ url_for('static', filename='img/product-img.jpg') }}" class="product-img">
+        <div class="product-details">
+            <h3 class="product-name">Pepsi cold drink can</h3>
+            <h4 class="product-price">Rs 150/-</h4>
+            <div class="product-buttons-div">
+                <a href="/dashboard/editDashboardProduct/afjlasjflk" class="edit-product-details-btn product-btn">Edit Product Details</a>
+                <button class="remove-product-btn product-btn">Remove Product</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-div">
+        <img src="{{ url_for('static', filename='img/product-img.jpg') }}" class="product-img">
+        <div class="product-details">
+            <h3 class="product-name">Pepsi cold drink can</h3>
+            <h4 class="product-price">Rs 150/-</h4>
+            <div class="product-buttons-div">
+                <a href="/dashboard/editDashboardProduct/afadsfasf" class="edit-product-details-btn product-btn">Edit Product Details</a>
+                <button class="remove-product-btn product-btn">Remove Product</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-div">
+        <img src="{{ url_for('static', filename='img/product-img.jpg') }}" class="product-img">
+        <div class="product-details">
+            <h3 class="product-name">Pepsi cold drink can</h3>
+            <h4 class="product-price">Rs 150/-</h4>
+            <div class="product-buttons-div">
+                <a href="/dashboard/editDashboardProduct/afadsfasf" class="edit-product-details-btn product-btn">Edit Product Details</a>
+                <button class="remove-product-btn product-btn">Remove Product</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-div">
+        <img src="{{ url_for('static', filename='img/product-img.jpg') }}" class="product-img">
+        <div class="product-details">
+            <h3 class="product-name">Pepsi cold drink can</h3>
+            <h4 class="product-price">Rs 150/-</h4>
+            <div class="product-buttons-div">
+                <a href="/dashboard/editDashboardProduct/afadsfasf" class="edit-product-details-btn product-btn">Edit Product Details</a>
+                <button class="remove-product-btn product-btn">Remove Product</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-div">
+        <img src="{{ url_for('static', filename='img/product-img.jpg') }}" class="product-img">
+        <div class="product-details">
+            <h3 class="product-name">Pepsi cold drink can</h3>
+            <h4 class="product-price">Rs 150/-</h4>
+            <div class="product-buttons-div">
+                <a href="/dashboard/editDashboardProduct/afadsfasf" class="edit-product-details-btn product-btn">Edit Product Details</a>
+                <button class="remove-product-btn product-btn">Remove Product</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock body %}

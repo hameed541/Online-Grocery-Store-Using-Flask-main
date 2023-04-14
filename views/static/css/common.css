@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+::-moz-selection {
+  background: #0cf00c;
+  color: white;
+}
+
+::selection {
+  background: #0cf00c;
+  color: white;
+}
+
+body {
+  background-color: #f0f0f0;
+}
+
+.btn {
+  width: 11vw;
+  background-color: #0cf00c;
+  border: none;
+  padding: 1.2vh 1.2vw;
+  border-radius: 12px;
+  color: white;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 1.12rem;
+  border: 1px solid #0cf00c;
+  cursor: pointer;
+}
+
+.btn:hover {
+  opacity: 0.6;
+}
+/*# sourceMappingURL=common.css.map */

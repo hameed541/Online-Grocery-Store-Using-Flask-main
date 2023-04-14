@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Rowdies&display=swap");
+.navigation-bar {
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1.2vh 1.2vw;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.visibility-resp {
+  -webkit-transition: opacity 0.2s ease-out;
+  transition: opacity 0.2s ease-out;
+}
+
+.company-logo-anchor {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  -webkit-transition: all 3s ease;
+  transition: all 3s ease;
+}
+
+.navbar-img-parent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.navbar-img-info-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navabr-img-name {
+  white-space: nowrap;
+  font-family: 'Rowdies', cursive;
+}
+
+.navbar-img {
+  height: 40px;
+  width: 40px;
+}
+
+.company-logo {
+  height: 75px;
+  width: 75px;
+}
+
+.search-input {
+  width: 40vw;
+  height: 4.2rem;
+  border: none;
+  padding: 1.2vh 1.2vw;
+  padding-left: 3.4vw;
+  background-color: #e9e9e9;
+  font-size: 1.1rem;
+  border-radius: 12px;
+  background-image: url("../img/search.png");
+  background-repeat: no-repeat;
+  background-size: 2vw 4.8vh;
+  background-position: 2% 50%;
+}
+
+.search-input:focus {
+  outline: none;
+}
+
+.navbar-img-parent > * {
+  padding-left: 1.3vw;
+  padding-right: 1.3vw;
+}
+
+.hamburger {
+  position: absolute;
+  top: 5%;
+  right: 3%;
+  display: none;
+}
+
+.line {
+  background-color: black;
+  width: 50px;
+  height: 7px;
+  margin-bottom: 5px;
+}
+
+/* Desigining auth and dashborard buttons */
+.navbar-auth-btn {
+  width: 5vw;
+  height: 7vh;
+  font-family: 'Rowdies', cursive;
+  white-space: nowrap;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 7px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-left: 0.5vw;
+  padding-right: 0.5vw;
+  font-size: 1rem;
+  margin-left: 1.1vw;
+  text-align: center;
+}
+
+.navbar-auth-btn:hover {
+  opacity: 0.8;
+}
+
+.login-btn {
+  background-color: #ff5858;
+}
+
+.signup-btn {
+  background-color: #4e4ebb;
+}
+/*# sourceMappingURL=navigation-bar.css.map */

@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@700&display=swap'); /* Importing Font for Order Number */
+
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@600&display=swap'); /* Importing Font for cells and heading of table and date details of order */
+
+.order-number{
+    font-size: 3.5rem;
+    text-align: center;
+    margin-top: 1.5vh;
+    margin-bottom: 1.5vh;
+    font-family: 'Baloo Bhai 2', cursive;
+}
+
+.order-date-detail{
+    font-size: 1.5rem;
+    text-align: center;
+    align-items: center;
+    font-family: 'Baloo Bhaijaan 2', cursive;
+}
+
+.total-price{
+    font-size: 1.5rem;
+    text-align: center;
+    align-items: center;
+    font-family: 'Baloo Bhaijaan 2', cursive;
+}
+
+
+.orders-table{
+    width: 80vw;
+    border: 1px solid black;
+    margin-right: auto;
+    margin-left: auto;
+    border-collapse: collapse;
+    margin-bottom: 3vh;
+}
+
+.orders-table thead{
+    background-color: rgb(117, 117, 117);
+}
+
+.orders-table-th-parent th{
+    padding: 1.2vh 1vw;
+    text-align: center;
+    font-family: 'Baloo Bhaijaan 2', cursive;
+    font-size: 1.3rem;
+}
+
+.orders-table-td-parent{
+    border-bottom: 1px solid black;
+    text-align: center;
+}
+
+.orders-table-td-parent td{
+    padding: 1.2vh 1vw;
+    font-family: 'Baloo Bhaijaan 2', cursive;
+    font-size: 1.12rem;
+}
+
+.adress-info{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: 'Baloo Bhaijaan 2', cursive;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+
+.adress-title-parent{
+    font-size: 1.5rem;
+}
+
+.main-adress{
+    font-size: 1.1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

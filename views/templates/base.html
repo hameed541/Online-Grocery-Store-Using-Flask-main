@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/company-logo.png') }}" type="image/x-icon">
+    <title>{{title}}</title>
+
+    <!-- Linking CSS File to add Javascript Plugin 'aos' in website -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- Linking CSS File that will contain the styles common to whole website -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/common.css') }}">
+
+    <!-- Linking CSS File that will design navigation bar -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/navigation-bar.css') }}">
+
+    <!-- Linking CSS File that will make the navigation bar responsive -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='responsive/navigation-bar.css') }}">
+
+    <!-- Linkig the file that will design all the forms of entire website -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/form.css') }}">
+
+    <!-- Linkig the file that will make all the forms of the website responsive -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='responsive/form.css') }}">
+
+    <!-- Linkig the file that will design the navigation messages of the website -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar-message.css') }}">
+
+    <!-- Linkig the file that will design the navigation messages of the website -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/loader.css') }}">
+</head>
+
+<body>
+
+    <nav class="navigation-bar h-resp">
+        <!-- <div class="company-info"></div> -->
+        <a href="/" class="company-logo-anchor"><img src="{{ url_for('static', filename='img/company-logo.png') }}" class="company-logo"></a>
+        <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <form class="search-form visibility-resp v-resp" action="/search" method="post">
+            <input type="search" name="search-input" id="search-input" placeholder="Search..." class="search-input">
+        </form>
+
+        {% if user.is_authenticated %}
+          {% if user.userId == 'owner' %}
+              <!-- This is the part that will be shown to the owners of the website -->
+                <div class="navbar-img-parent visibility-resp v-resp">
+                    <div class="my-account-info navbar-img-info-div">
+                        <a href="/dashboard">
+                            <img src="{{ url_for('static', filename='img/dashboard.png') }}" class="navbar-img">
+                        </a>
+                        <span class="navabr-img-name">Dashboard</span>
+                    </div>
+                </div>
+          {% else %}
+              <!-- This part will be shown to the users that have logged in -->
+                <div class="navbar-img-parent visibility-resp v-resp">
+                    <div class="my-account-info navbar-img-info-div">
+                        <a href="/account">
+                            <img src="{{ url_for('static', filename='img/user.png') }}" class="navbar-img">
+                        </a>
+                        <span class="navabr-img-name">My Account</span>
+                    </div>
+                    <div class="cart-info navbar-img-info-div">
+                        <a href="/cart">
+                            <img src="{{ url_for('static', filename='img/shopping-cart.png') }}" class="navbar-img">
+                        </a>
+                        <span class="navabr-img-name">My Cart</span>
+                    </div>
+                </div>
+          {% endif %}
+
+        {% else %}
+                <!-- This buttons will be shown to the users that have not yet logged in -->
+                <div class="navbar-img-parent visibility-resp v-resp">
+                    <a href="/login" class="navbar-auth-btn login-btn">Login</a>
+                    <a href="/signup" class="navbar-auth-btn signup-btn">Signup</a>
+                </div>
+        {% endif %}
+
+    </nav>
+
+    <!-- Flashing Messages according to category -->
+  {% with messages = get_flashed_messages(with_categories=True) %}
+  {% if messages %}
+  {% for category,message in messages %}
+  {% if category == 'error' %}
+  <div class="message warning-message">
+    <div class="message-info-div">
+        <img src="{{ url_for('static', filename='img/warning.png') }}" class="warning-img message-img">
+        <h3 class="message-text">
+            {{message}}
+        </h3>
+    </div>
+    <img src="{{ url_for('static', filename='img/cancel.png') }}" class="close-message-img">
+</div>
+  {% else %}
+  <div class="message success-message">
+    <div class="message-info-div">
+        <img src="{{ url_for('static', filename='img/success.png') }}" class="warning-img message-img">
+        <h3 class="message-text">
+            {{message}}
+        </h3>
+    </div>
+    <img src="{{ url_for('static', filename='img/cancel.png') }}" class="close-message-img">
+</div>
+  {% endif %}
+  {% endfor %}
+
+  <script src="{{ url_for('static', filename='js/navbar-message.js') }}"></script>
+  {% endif %}
+  {% endwith %}
+
+    <div class="popup-message-div warning-popup-message hide-message">
+        <h3 class="message-text" id="warning-text"></h3>
+    </div>
+
+    <div class="popup-message-div success-popup-message hide-message">
+        <h3 class="message-text" id="success-text"></h3>
+    </div>
+
+
+    {% block body %}
+
+    {% endblock body %}
+
+        <!-- HTML for loader -->
+        <div class="loader-div">
+            <div class="loader hide-loader" id="loader">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+
+</body>
+
+<script src="{{ url_for('static', filename='js/responsive-navigation-bar.js') }}"></script>
+
+</html>

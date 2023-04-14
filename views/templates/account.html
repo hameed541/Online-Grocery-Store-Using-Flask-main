@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<!-- This file will design this page -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/account.css') }}">
+
+<!-- This file will make this page responsive -->
+<link rel="stylesheet" href="{{ url_for('static', filename='responsive/account.css') }}">
+
+<h1 class="greeting">
+    Hello 👋, {{user.realNameOfUser}}
+</h1>
+
+<div class="account-buttons-parent">
+    <a href="/editProfile" class="open-form-modal-button edit-profile-button account-button">Edit Profile</a>
+    <a href="/orders" class="orders-button account-button">Your Orders</a>
+    <a href="/logout" class="logout-button account-button"> Logout </a>
+</div>
+
+{% endblock body %}

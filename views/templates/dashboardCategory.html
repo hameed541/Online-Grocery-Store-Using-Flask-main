@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<!-- This file will design this page -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/dashboardCategory.css') }}">
+
+<!-- This file will make this page responsive -->
+<link rel="stylesheet" href="{{ url_for('static', filename='responsive/dashboardCategory.css') }}">
+
+<h1 class="page-title">
+    Here 👇 you can view and edit categories of the products of website
+</h1>
+
+<div class="add-category-div">
+    <input type="text" name="add-category-input" id="add-category-input">
+    <button id="add-category-btn">Add Category</button>
+</div>
+
+{% if categories|length == 0 %}
+<div class="no-category categories-parent">
+    <h1 class="page-title">
+        Your added categories will be shown here
+    </h1>
+</div>
+{% else %}
+    <div class="categories-parent">
+        {% for category in categories %}
+            <div class="category-div">
+                <input type="text" name="category-name" placeholder="Enter the Category Name" value="{{category.categoryName}}" id="{{category.categoryId}}-input" class="category-name-input">
+                <a class="{{category.categoryId}} update-name-btn">Update Category</a>
+                <img src="{{ url_for('static', filename='img/cancel.png') }}" class="{{category.categoryId}} delete-category-btn">
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}
+
+<div class="delete-check-modal hide-modal">
+    <h1 class="modal-title">
+        Are you sure that you want to delete this category ?
+    </h1>
+    <div class="modal-btn-div">
+    <a class="modal-btn cancel-btn">
+        Cancel
+    </a>
+    <a class="modal-btn delete-btn">
+        Yes, Delete it
+    </a>
+</div>
+</div>
+
+<script src="{{ url_for('static', filename='js/modal-animation-dashboard.js') }}"></script>
+<script src="{{ url_for('static', filename='js/dashboardCategory.js') }}"></script>
+<script src="{{ url_for('static', filename='js/edit-dashboard-category.js') }}"></script>
+<script src="{{ url_for('static', filename='js/delete-dashboard-category.js') }}"></script>
+
+{% endblock body %}
