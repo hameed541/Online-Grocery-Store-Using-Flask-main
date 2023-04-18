@@ -1,7 +1,7 @@
 ''' Project Name : TB Grocery Store '''
 ''' Project Description : This is a website that is made for a grocery store and is having all the
 features neeeded for the store to grow. '''
-''' Author : Harshu Prasad Shukla '''
+''' Author : Hameed Cuddapah '''
 
 ''' FILE DESCRIPTION : THIS IS THE MAIN FILE THAT RUNS THE PROJECT '''
 
