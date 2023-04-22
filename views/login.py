@@ -14,32 +14,30 @@ def renderLoginPage():
         emailIdUser = request.form['email'] # Getting Email Id from Login form of the website
         passwordLogin = request.form['password'] # Getting Email Id from Login form of the website
 
-        isEmailValid = checkEmail(emailIdUser) # Checking if email is a valid email or not
-
+        isEmailValid = checkEmail(emailIdUser) 
         # If email of User is correct
         if isEmailValid:
-            userObject = User.query.filter_by(emailOfUser=emailIdUser).first() # This variable will return true if email exists
+            userObject = User.query.filter_by(emailOfUser=emailIdUser).first() 
 
             if userObject:
                 # Checking if user has typed correct password
                 if check_password_hash(userObject.passwordOfUser,passwordLogin):
-                    loginSuccessful =  login_user(userObject,remember=True) # Logging the user in
+                    loginSuccessful =  login_user(userObject,remember=True) 
                     if loginSuccessful:
-                        return redirect('/') # returning to home page
+                        return redirect('/') 
                     else:
                         flash("Something went wrong while logging the user in",category='error')
-                        return redirect('/') # returning to home page
+                        return redirect('/') 
 
                 else:
                     flash("Invalid Credentials",category='error')
-                    return redirect('/') # returning to home page
+                    return redirect('/') 
 
             else:
                 flash("Invalid Credentials",category='error')
-                return redirect('/') # returning to home page
-        
-        else: # If user email isn't valid
+                return redirect('/') 
+        else: 
             flash("Email is not Valid",category='error')
-            return redirect('/') # returning to home page
+            return redirect('/') 
 
-    return render_template('login.html',title='Login - TB Grocery Store',user=current_user) # Rendering login.html page
+    return render_template('login.html',title='Login - TB Grocery Store',user=current_user) 

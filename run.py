@@ -5,9 +5,9 @@ features neeeded for the store to grow. '''
 
 ''' FILE DESCRIPTION : THIS IS THE MAIN FILE THAT RUNS THE PROJECT '''
 
-from views import createApp # Importing createApp from __init__.py file in views directory
+from views import createApp 
 
-app = createApp() # Creating app using function createApp from __init__.py file in views directory
+app = createApp() 
 
 if __name__ == '__main__':
-    app.run(debug=True,port=5001) # Runs Server at port 5001
+    app.run(debug=True,port=5001) 
